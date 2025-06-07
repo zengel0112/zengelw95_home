@@ -32,8 +32,8 @@ function MsnFolder() {
   const [initialLoading, setInitialLoading] = useState(false)
   const hasScrolledRef = useRef(false);
 
-  const lastMessage = chatData.length > 0
-    ? chatData[chatData.length - 1].date.split('').slice(0, 10).join('')
+  const lastMessage = chatData.length > 0 && chatData[chatData.length - 1]?.date
+    ? String(chatData[chatData.length - 1].date).split('').slice(0, 10).join('')
     : 'No messages yet';
 
 
